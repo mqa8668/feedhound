@@ -1,0 +1,27 @@
+{
+  "name": "@feedhound/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "migrate": "bun run src/migrate.ts",
+    "seed": "bun run src/seed.ts",
+    "seed:demo": "bun run src/seed-demo.ts",
+    "generate": "drizzle-kit generate",
+    "bench:corpus": "BENCH=1 NODE_ENV=test bun run bench/corpus-bench.ts"
+  },
+  "dependencies": {
+    "@feedhound/core": "workspace:*",
+    "drizzle-orm": "^0.45.2",
+    "postgres": "^3.4.5",
+    "yaml": "^2.7.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.10",
+    "@types/pg": "^8.11.10"
+  }
+}

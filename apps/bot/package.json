@@ -1,0 +1,23 @@
+{
+  "name": "@feedhound/bot",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./notifiers": "./src/notifiers/index.ts",
+    "./format": "./src/format.ts"
+  },
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "link-code": "bun run src/cli/link-code.ts"
+  },
+  "dependencies": {
+    "@feedhound/core": "workspace:*",
+    "@feedhound/db": "workspace:*",
+    "drizzle-orm": "^0.45.2",
+    "hono": "^4.13.8"
+  }
+}

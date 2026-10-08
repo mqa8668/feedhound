@@ -1,0 +1,27 @@
+{
+  "name": "@feedhound/agent",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "rollup:backfill": "bun run scripts/rollup-backfill.ts",
+    "web:source-add": "bun run scripts/web-source-add.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@feedhound/api": "workspace:*",
+    "@feedhound/bot": "workspace:*",
+    "@feedhound/core": "workspace:*",
+    "@feedhound/db": "workspace:*",
+    "@feedhound/llm": "workspace:*",
+    "drizzle-orm": "^0.45.2",
+    "fast-xml-parser": "^5.11.2",
+    "hono": "^4.13.8",
+    "pg-boss": "^12.33.0",
+    "pino": "^10.3.1",
+    "sharp": "^0.34",
+    "zod": "^4.6.5"
+  }
+}

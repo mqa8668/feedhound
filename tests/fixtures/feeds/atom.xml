@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Example Deals Feed</title>
+  <link href="https://deals.example.test/" rel="alternate"/>
+  <link href="https://deals.example.test/atom.xml" rel="self"/>
+  <updated>2026-10-05T12:00:00Z</updated>
+  <id>urn:uuid:11111111-2222-3333-4444-555555555555</id>
+  <entry>
+    <title type="html">Used &lt;b&gt;monitor&lt;/b&gt; 27 inch</title>
+    <link rel="alternate" href="https://deals.example.test/item/77"/>
+    <link rel="enclosure" href="https://deals.example.test/img/77.jpg" type="image/jpeg"/>
+    <id>tag:deals.example.test,2026:item-77</id>
+    <updated>2026-10-05T11:45:00+07:00</updated>
+    <author><name>Lan Pham</name></author>
+    <summary type="html">&lt;p&gt;Barely used, &amp;amp; boxed.&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <title>Mechanical keyboard</title>
+    <link href="/item/78"/>
+    <id>tag:deals.example.test,2026:item-78</id>
+    <published>2026-10-04T09:00:00Z</published>
+    <content type="text">Tactile switches, hot-swappable.</content>
+  </entry>
+</feed>

@@ -1,0 +1,31 @@
+{
+  "name": "feedhound",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun --env-file=.env run --filter '*' dev",
+    "typecheck": "bun run --filter '*' typecheck && tsc --noEmit -p tests/tsconfig.json",
+    "test": "bun test apps/agent apps/api apps/bot packages tests/e2e && bun run --cwd apps/web test",
+    "test:pipeline": "bun test tests/e2e",
+    "test:e2e": "bun run --cwd apps/web test:e2e",
+    "lint": "eslint .",
+    "db:migrate": "bun --env-file=.env packages/db/src/migrate.ts",
+    "test:db": "bun packages/db/src/test-db.ts",
+    "db:seed": "bun run --cwd packages/db seed",
+    "db:seed:demo": "bun --env-file=.env packages/db/src/seed-demo.ts",
+    "demo:up": "docker compose --profile demo up -d --build",
+    "demo:down": "docker compose --profile demo down -v"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/bun": "^1.4.2",
+    "eslint": "^10.10.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.70.0"
+  }
+}

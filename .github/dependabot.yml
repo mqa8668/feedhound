@@ -1,0 +1,33 @@
+# Bun lockfile support: Dependabot's "bun" ecosystem is used for the workspace root.
+# If the ecosystem is rejected by your Dependabot version, switch it to "npm".
+version: 2
+updates:
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: "docker"
+    directories:
+      - "/"
+      - "/apps/api"
+      - "/apps/agent"
+      - "/apps/bot"
+      - "/apps/web"
+      - "/infra/demo-feeds"
+    schedule:
+      interval: "weekly"
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]

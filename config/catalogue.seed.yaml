@@ -1,0 +1,134 @@
+# Seed CatalogItem rows, one entry per item. `categorySlug` must match a
+# leaf (or any) slug in config/taxonomy.yaml. Not yet wired into
+# `packages/db/src/seed.ts` (upserted by (category, name) on every seed run).
+
+- categorySlug: iphone
+  name: iPhone 15
+  aliases: ["ip15", "iphone 15", "i15"]
+- categorySlug: iphone
+  name: iPhone 15 Pro Max
+  aliases: ["ip15pm", "iphone 15 pro max", "i15pm"]
+- categorySlug: iphone
+  name: iPhone 14
+  aliases: ["ip14", "iphone 14", "i14"]
+- categorySlug: iphone
+  name: iPhone 13
+  aliases: ["ip13", "iphone 13", "i13"]
+- categorySlug: samsung
+  name: Samsung Galaxy S24
+  aliases: ["s24", "galaxy s24", "samsung s24"]
+- categorySlug: samsung
+  name: Samsung Galaxy A54
+  aliases: ["a54", "galaxy a54", "samsung a54"]
+- categorySlug: xiaomi
+  name: Xiaomi Redmi Note 13
+  aliases: ["redmi note 13", "note 13"]
+- categorySlug: oppo
+  name: OPPO Reno 11
+  aliases: ["reno 11", "oppo reno 11"]
+- categorySlug: macbook
+  name: MacBook Air M1
+  aliases: ["macbook air m1", "mba m1"]
+- categorySlug: macbook
+  name: MacBook Pro M2
+  aliases: ["macbook pro m2", "mbp m2"]
+- categorySlug: windows-laptop
+  name: Dell XPS 13
+  aliases: ["dell xps 13", "xps 13"]
+- categorySlug: gaming-laptop
+  name: Asus ROG Strix
+  aliases: ["rog strix", "asus rog"]
+- categorySlug: ipad
+  name: iPad Gen 9
+  aliases: ["ipad gen 9", "ipad 9"]
+- categorySlug: ipad
+  name: iPad Pro
+  aliases: ["ipad pro"]
+- categorySlug: android-tablet
+  name: Samsung Galaxy Tab S9
+  aliases: ["galaxy tab s9", "tab s9"]
+- categorySlug: earbuds
+  name: AirPods Pro 2
+  aliases: ["airpods pro 2", "airpods pro"]
+- categorySlug: headphones
+  name: Sony WH-1000XM5
+  aliases: ["sony wh-1000xm5", "wh1000xm5"]
+- categorySlug: speakers
+  name: JBL Charge 5
+  aliases: ["jbl charge 5", "charge 5"]
+- categorySlug: smartwatch
+  name: Apple Watch Series 9
+  aliases: ["apple watch series 9", "aw9"]
+- categorySlug: fitness-band
+  name: Xiaomi Mi Band 8
+  aliases: ["mi band 8", "miband 8"]
+- categorySlug: honda
+  name: Honda Wave Alpha
+  aliases: ["wave alpha"]
+- categorySlug: yamaha
+  name: Yamaha Exciter 155
+  aliases: ["exciter 155"]
+- categorySlug: vinfast-ev
+  name: VinFast Klara S
+  aliases: ["klara s", "vinfast klara"]
+- categorySlug: sedan
+  name: Toyota Vios
+  aliases: ["toyota vios", "vios"]
+- categorySlug: suv
+  name: Honda CR-V
+  aliases: ["honda cr-v", "crv"]
+- categorySlug: road-bike
+  name: Giant TCR
+  aliases: ["giant tcr"]
+- categorySlug: mountain-bike
+  name: Giant Talon
+  aliases: ["giant talon"]
+
+# Item-level fixed attributes (`attributes`) win over regex/LLM values.
+- categorySlug: iphone
+  name: iPhone 15 Pro
+  aliases: ["ip15p", "iphone 15 pro", "i15p"]
+- categorySlug: iphone
+  name: iPhone 16
+  aliases: ["ip16", "iphone 16", "i16"]
+- categorySlug: iphone
+  name: iPhone 16 Pro
+  aliases: ["ip16p", "iphone 16 pro", "i16p"]
+- categorySlug: iphone
+  name: iPhone 16 Pro Max
+  aliases: ["ip16pm", "iphone 16 pro max", "i16pm"]
+- categorySlug: iphone
+  name: iPhone 17
+  aliases: ["ip17", "iphone 17", "i17"]
+- categorySlug: iphone
+  name: iPhone 17 Pro
+  aliases: ["ip17p", "iphone 17 pro", "i17p"]
+- categorySlug: iphone
+  name: iPhone 17 Pro Max
+  aliases: ["ip17pm", "iphone 17 pro max", "i17pm"]
+- categorySlug: iphone
+  name: iPhone Air
+  aliases: ["iphone air", "ip air"]
+- categorySlug: iphone
+  name: iPhone X
+  aliases: ["iphone x", "ipx"]
+- categorySlug: macbook
+  name: MacBook Air
+  aliases: ["mba", "macbook air", "mac air"]
+  attributes: {line: air}
+- categorySlug: macbook
+  name: MacBook Pro
+  aliases: ["mbp", "macbook pro", "macbook pờ rô"]
+  attributes: {line: pro}
+- categorySlug: macbook
+  name: Mac mini
+  aliases: ["mac mini"]
+  attributes: {line: mini}
+- categorySlug: macbook
+  name: iMac
+  aliases: ["imac"]
+  attributes: {line: imac}
+- categorySlug: macbook
+  name: Mac Studio
+  aliases: ["mac studio"]
+  attributes: {line: studio}
