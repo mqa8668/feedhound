@@ -16,12 +16,12 @@
     "@feedhound/core": "workspace:*",
     "@feedhound/db": "workspace:*",
     "@feedhound/llm": "workspace:*",
-    "drizzle-orm": "^0.45.2",
+    "drizzle-orm": "^0.45.3",
     "fast-xml-parser": "^5.11.2",
-    "hono": "^4.13.8",
-    "pg-boss": "^12.33.0",
+    "hono": "^4.13.13",
+    "pg-boss": "^12.37.0",
     "pino": "^10.3.1",
-    "sharp": "^0.34",
+    "sharp": "^0.35",
     "zod": "^4.6.5"
   }
 }
