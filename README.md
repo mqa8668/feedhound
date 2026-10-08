@@ -2,7 +2,7 @@
 
 Keyword watcher for public feeds, with Telegram alerts.
 
-<!-- screenshot.png -->
+<p align="center"><img src="docs/media/demo.gif" alt="Feedhound dashboard: matches inbox, a match detail page, then the watches list" width="900"></p>
 
 ## Why
 
@@ -21,6 +21,16 @@ you write, and sends the hits to Telegram.
 - Dashboard for sources, watches, matches, API keys, config and ops views.
 - Fetcher that checks robots.txt, blocks private addresses (SSRF guard) and limits request rate, size and time.
 - Prometheus metrics, health endpoints and collection SLO gauges.
+
+## Screenshots
+
+<p align="center"><img src="docs/media/sources-add-feed.png" alt="Sources page with the Add feed source dialog previewing a JSON Feed" width="720"></p>
+
+Add a feed and preview its latest items before saving.
+
+<p align="center"><img src="docs/media/health.png" alt="Health page with database, source and queue status" width="720"></p>
+
+Health view: database, source coverage and job queues.
 
 ## Architecture
 
