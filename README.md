@@ -49,7 +49,7 @@ dead-letter queues that can be retried through the ops API. Services:
 `api` (HTTP and WebSocket), `agent` (workers), `bot` (Telegram long polling),
 `web` (dashboard, also proxies `/api` and `/ws`).
 
-## 60-second demo
+## Quick demo
 
 Requires Docker with the Compose plugin.
 
@@ -61,7 +61,8 @@ docker compose --profile demo up -d --build
 
 Open http://127.0.0.1:4823 and log in with the password `demo`. The first
 build takes a few minutes; after the agent starts, the demo watches begin
-matching the fixture feeds and hits appear on the Matches page. No Telegram
+matching the fixture feeds on the next poll (within about five minutes) and
+hits appear on the Matches page. No Telegram
 bot is needed for that.
 
 The password `demo` is for the demo only. When `AUTH_PASSWORD_HASH` is unset,
