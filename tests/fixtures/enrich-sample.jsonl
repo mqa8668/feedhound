@@ -1,0 +1,200 @@
+{"text":"can ban iphone 15 gia 15tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung s23 gia 8tr5 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 2tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"for sale ipad gen 9 gia 500k lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 12 triệu lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 3tr8 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"ban gap galaxy s24 gia 15tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 8tr5 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 2tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"thanh ly airpods pro gia 500k lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 12 triệu lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh samsung a54 gia 3tr8 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"can ban macbook air gia 15tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 8tr5 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 2tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"for sale iphone 15 gia 500k lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung s24 gia 12 triệu lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 3tr8 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"ban gap ipad gen 9 gia 15tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 8tr5 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 2tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"thanh ly samsung s23 gia 500k lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 12 triệu lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 3tr8 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"can ban airpods pro gia 15tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 8tr5 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh galaxy s24 gia 2tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"for sale macbook air gia 500k lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 12 triệu lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 3tr8 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"ban gap iphone 15 gia 15tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung a54 gia 8tr5 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 2tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"thanh ly ipad gen 9 gia 500k lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 12 triệu lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 3tr8 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"can ban samsung s24 gia 15tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 8tr5 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 2tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"for sale airpods pro gia 500k lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 12 triệu lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh samsung s23 gia 3tr8 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"ban gap macbook air gia 15tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 8tr5 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 2tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"thanh ly iphone 15 gia 500k lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua galaxy s24 gia 12 triệu lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 3tr8 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"can ban ipad gen 9 gia 15tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 8tr5 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 2tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"for sale samsung a54 gia 500k lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 12 triệu lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 3tr8 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"ban gap airpods pro gia 15tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 8tr5 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh samsung s24 gia 2tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"thanh ly macbook air gia 500k lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 12 triệu lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 3tr8 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"can ban iphone 15 gia 15tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung s23 gia 8tr5 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 2tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"for sale ipad gen 9 gia 500k lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 12 triệu lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 3tr8 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"ban gap galaxy s24 gia 15tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 8tr5 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 2tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"thanh ly airpods pro gia 500k lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 12 triệu lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh samsung a54 gia 3tr8 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"can ban macbook air gia 15tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 8tr5 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 2tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"for sale iphone 15 gia 500k lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung s24 gia 12 triệu lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 3tr8 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"ban gap ipad gen 9 gia 15tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 8tr5 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 2tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"thanh ly samsung s23 gia 500k lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 12 triệu lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 3tr8 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"can ban airpods pro gia 15tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 8tr5 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh galaxy s24 gia 2tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"for sale macbook air gia 500k lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 12 triệu lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 3tr8 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"ban gap iphone 15 gia 15tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung a54 gia 8tr5 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 2tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"thanh ly ipad gen 9 gia 500k lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 12 triệu lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 3tr8 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"can ban samsung s24 gia 15tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 8tr5 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 2tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"for sale airpods pro gia 500k lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 12 triệu lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh samsung s23 gia 3tr8 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"ban gap macbook air gia 15tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 8tr5 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 2tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"thanh ly iphone 15 gia 500k lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua galaxy s24 gia 12 triệu lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 3tr8 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"can ban ipad gen 9 gia 15tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 8tr5 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 2tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"for sale samsung a54 gia 500k lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 12 triệu lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 3tr8 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"ban gap airpods pro gia 15tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 8tr5 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh samsung s24 gia 2tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"thanh ly macbook air gia 500k lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 12 triệu lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 3tr8 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"can ban iphone 15 gia 15tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung s23 gia 8tr5 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 2tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"for sale ipad gen 9 gia 500k lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 12 triệu lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 3tr8 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"ban gap galaxy s24 gia 15tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 8tr5 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 2tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"thanh ly airpods pro gia 500k lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 12 triệu lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh samsung a54 gia 3tr8 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"can ban macbook air gia 15tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 8tr5 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 2tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"for sale iphone 15 gia 500k lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung s24 gia 12 triệu lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 3tr8 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"ban gap ipad gen 9 gia 15tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 8tr5 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 2tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"thanh ly samsung s23 gia 500k lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 12 triệu lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 3tr8 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"can ban airpods pro gia 15tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 8tr5 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh galaxy s24 gia 2tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"for sale macbook air gia 500k lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 12 triệu lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 3tr8 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"ban gap iphone 15 gia 15tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung a54 gia 8tr5 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 2tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"thanh ly ipad gen 9 gia 500k lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 12 triệu lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 3tr8 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"can ban samsung s24 gia 15tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 8tr5 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 2tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"for sale airpods pro gia 500k lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 12 triệu lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh samsung s23 gia 3tr8 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"ban gap macbook air gia 15tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 8tr5 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 2tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"thanh ly iphone 15 gia 500k lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua galaxy s24 gia 12 triệu lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 3tr8 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"can ban ipad gen 9 gia 15tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 8tr5 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 2tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"for sale samsung a54 gia 500k lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 12 triệu lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 3tr8 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"ban gap airpods pro gia 15tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 8tr5 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh samsung s24 gia 2tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"thanh ly macbook air gia 500k lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 12 triệu lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 3tr8 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"can ban iphone 15 gia 15tr lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung s23 gia 8tr5 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 2tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"for sale ipad gen 9 gia 500k lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 12 triệu lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}
+{"text":"so sanh cho minh iphone 15 gia 3tr8 lh zalo","expectedCategorySlug":"iphone","expectedIntent":"other"}
+{"text":"ban gap galaxy s24 gia 15tr lh zalo","expectedCategorySlug":"samsung","expectedIntent":"sell"}
+{"text":"tim mua macbook pro gia 8tr5 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"buy"}
+{"text":"so sanh cho minh ipad air gia 2tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"other"}
+{"text":"thanh ly airpods pro gia 500k lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"sell"}
+{"text":"tim mua iphone 15 gia 12 triệu lh zalo","expectedCategorySlug":"iphone","expectedIntent":"buy"}
+{"text":"so sanh cho minh samsung a54 gia 3tr8 lh zalo","expectedCategorySlug":"samsung","expectedIntent":"other"}
+{"text":"can ban macbook air gia 15tr lh zalo","expectedCategorySlug":"macbook","expectedIntent":"sell"}
+{"text":"tim mua ipad pro gia 8tr5 lh zalo","expectedCategorySlug":"ipad","expectedIntent":"buy"}
+{"text":"so sanh cho minh tai nghe bluetooth gia 2tr lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"other"}
+{"text":"for sale iphone 15 gia 500k lh zalo","expectedCategorySlug":"iphone","expectedIntent":"sell"}
+{"text":"tim mua samsung s24 gia 12 triệu lh zalo","expectedCategorySlug":"samsung","expectedIntent":"buy"}
+{"text":"so sanh cho minh macbook m1 gia 3tr8 lh zalo","expectedCategorySlug":"macbook","expectedIntent":"other"}
+{"text":"ban gap ipad gen 9 gia 15tr lh zalo","expectedCategorySlug":"ipad","expectedIntent":"sell"}
+{"text":"tim mua airpods 3 gia 8tr5 lh zalo","expectedCategorySlug":"earbuds","expectedIntent":"buy"}

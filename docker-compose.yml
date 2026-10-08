@@ -1,0 +1,269 @@
+name: feedhound
+
+# Log rotation: json-file driver, capped so container logs never fill the disk.
+x-default-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "20m"
+    max-file: "5"
+
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      POSTGRES_USER: feedhound
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+      POSTGRES_DB: feedhound
+    ports:
+      - "127.0.0.1:${PG_PUBLISH:-5433}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U feedhound -d feedhound"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # One-shot: apply migrations, then the base seed (config defaults, taxonomy, catalogue,
+  # team, operator user). Idempotent; re-runs on every `up`.
+  migrate:
+    # Same Dockerfile as the api, own image name (two services must not export the same tag in one build).
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    image: ${MIGRATE_IMAGE:-feedhound-migrate}:${IMAGE_TAG:-latest}
+    restart: "no"
+    logging: *default-logging
+    working_dir: /repo
+    command: ["sh", "-c", "bun packages/db/src/migrate.ts && bun packages/db/src/seed.ts"]
+    environment:
+      DATABASE_URL: postgres://feedhound:${POSTGRES_PASSWORD}@postgres:5432/feedhound
+      NODE_ENV: production
+      SEED_OPERATOR_EMAIL: ${SEED_OPERATOR_EMAIL:-operator@feedhound.local}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    image: ${API_IMAGE:-ghcr.io/mqa8668/feedhound-api}:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      DATABASE_URL: postgres://feedhound:${POSTGRES_PASSWORD}@postgres:5432/feedhound
+      API_PORT: "4820"
+      LOG_LEVEL: info
+      # cached thumbnails written by the agent, served read-only here.
+      MEDIA_DIR: /data/media
+      # watch parse (POST /api/watches/parse); unset -> 503 llm_unavailable.
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      NODE_ENV: ${NODE_ENV:-production}
+      CF_ACCESS_AUD: ${CF_ACCESS_AUD:-}
+      CF_ACCESS_TEAM_DOMAIN: ${CF_ACCESS_TEAM_DOMAIN:-}
+      DEV_AUTH_BYPASS: ${DEV_AUTH_BYPASS:-}
+      # Dashboard login. "local" = password form; "cf-access" = Cloudflare Access JWT.
+      AUTH_MODE: ${AUTH_MODE:-local}
+      # DEMO ONLY: when AUTH_PASSWORD_HASH is unset the dashboard password is "demo" (argon2id hash below).
+      # In production the api refuses this hash unless the demo seed ran (`--profile demo` writes config
+      # demo.enabled=true; the api restarts until it sees it) or AUTH_ALLOW_DEMO_PASSWORD=1.
+      # A plain `docker compose up` therefore refuses to start: set your own AUTH_PASSWORD_HASH in .env.
+      AUTH_ALLOW_DEMO_PASSWORD: ${AUTH_ALLOW_DEMO_PASSWORD:-}
+      AUTH_PASSWORD_HASH: ${AUTH_PASSWORD_HASH:-$$argon2id$$v=19$$m=65536,t=2,p=1$$cyJ4VZz7qdICdLrKST4iaePAX2pA7e6YrbXhtTBVhgw$$oXisYF8Y93l+lZISWSzJWu7c4TgEJMJoNLtEGQMyMHY}
+      # Defaults to a value derived from POSTGRES_PASSWORD; set SESSION_SECRET for anything beyond a local try-out.
+      SESSION_SECRET: ${SESSION_SECRET:-session-${POSTGRES_PASSWORD}}
+    ports:
+      - "127.0.0.1:${API_PUBLISH:-4820}:4820"
+    volumes:
+      - feedhound_media:/data/media:ro
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    stop_grace_period: 40s
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://127.0.0.1:4820/readyz').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 45s
+
+  agent:
+    build:
+      context: .
+      dockerfile: apps/agent/Dockerfile
+    image: ${AGENT_IMAGE:-ghcr.io/mqa8668/feedhound-agent}:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      DATABASE_URL: postgres://feedhound:${POSTGRES_PASSWORD}@postgres:5432/feedhound
+      AGENT_PORT: "4821"
+      LOG_LEVEL: info
+      # thumbnail cache (agent writes, api reads).
+      MEDIA_DIR: /data/media
+      # the agent reads these (apps/agent/src/index.ts); compose did not pass them before.
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      TG_BOT_TOKEN: ${TG_BOT_TOKEN:-}
+      TG_API_BASE: ${TG_API_BASE:-https://api.telegram.org}
+      PUBLIC_HOSTNAME: ${PUBLIC_HOSTNAME:-}
+    ports:
+      - "127.0.0.1:${AGENT_PUBLISH:-4821}:4821"
+    volumes:
+      - feedhound_media:/data/media
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      api:
+        condition: service_healthy
+    stop_grace_period: 40s
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://127.0.0.1:4821/readyz').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 45s
+
+  # Needs TG_BOT_TOKEN. Only started with `--profile telegram`.
+  bot:
+    profiles: [telegram]
+    build:
+      context: .
+      dockerfile: apps/bot/Dockerfile
+    image: ${BOT_IMAGE:-ghcr.io/mqa8668/feedhound-bot}:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      DATABASE_URL: postgres://feedhound:${POSTGRES_PASSWORD}@postgres:5432/feedhound
+      BOT_PORT: "4822"
+      LOG_LEVEL: info
+      TG_BOT_TOKEN: ${TG_BOT_TOKEN:-}
+    ports:
+      - "127.0.0.1:${BOT_PUBLISH:-4822}:4822"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      api:
+        condition: service_healthy
+    stop_grace_period: 40s
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://127.0.0.1:4822/readyz').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 45s
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    image: ${WEB_IMAGE:-ghcr.io/mqa8668/feedhound-web}:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      WEB_PORT: "4823"
+      # same-origin: the web container serves the dashboard and proxies /api and /ws here.
+      API_URL: http://api:4820
+    ports:
+      - "127.0.0.1:${WEB_PUBLISH:-4823}:4823"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://127.0.0.1:4823/healthz').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  # Only started with `--profile demo`: fixture feeds plus demo data (sources, watches, config).
+  demo-feeds:
+    profiles: [demo]
+    build:
+      context: infra/demo-feeds
+    image: ${DEMO_FEEDS_IMAGE:-ghcr.io/mqa8668/feedhound-demo-feeds}:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    logging: *default-logging
+    environment:
+      PORT: "8080"
+      DEMO_FEEDS_BASE: http://demo-feeds:8080
+    healthcheck:
+      test: ["CMD", "bun", "-e", "fetch('http://127.0.0.1:8080/healthz').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  # One-shot, idempotent. DEMO_OFFLINE=1 skips the internet-facing source (hnrss.org).
+  demo-seed:
+    profiles: [demo]
+    # Image built by the migrate service (demo-seed starts after it).
+    image: ${MIGRATE_IMAGE:-feedhound-migrate}:${IMAGE_TAG:-latest}
+    restart: "no"
+    logging: *default-logging
+    working_dir: /repo
+    command: ["bun", "packages/db/src/seed-demo.ts"]
+    environment:
+      DATABASE_URL: postgres://feedhound:${POSTGRES_PASSWORD}@postgres:5432/feedhound
+      NODE_ENV: production
+      SEED_OPERATOR_EMAIL: ${SEED_OPERATOR_EMAIL:-operator@feedhound.local}
+      DEMO_OFFLINE: ${DEMO_OFFLINE:-}
+      DEMO_FEED_BASE: http://demo-feeds:8080
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+  # Only started with `docker compose --profile metrics ...`.
+  prometheus:
+    image: prom/prometheus:latest
+    restart: unless-stopped
+    profiles: [metrics]
+    logging: *default-logging
+    volumes:
+      - ./infra/metrics/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - feedhound_prom:/prometheus
+    ports:
+      - "127.0.0.1:${PROM_PUBLISH:-4830}:9090"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:9090/-/ready || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  grafana:
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    profiles: [metrics]
+    logging: *default-logging
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+    volumes:
+      - ./infra/metrics/dashboards:/etc/grafana/provisioning/dashboards-src:ro
+    ports:
+      - "127.0.0.1:${GRAFANA_PUBLISH:-4831}:3000"
+    depends_on:
+      - prometheus
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  pgdata:
+  feedhound_media: # thumbnail cache (agent rw, api ro)
+  # Backups are written directly to the host's /backups by infra/backup.sh
+  # (run outside compose, via `docker compose exec postgres pg_dump`), so this
+  # volume documents the stable location rather than being mounted into a
+  # service.
+  feedhound_backups:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /backups
+  feedhound_prom: # P2, --profile metrics only

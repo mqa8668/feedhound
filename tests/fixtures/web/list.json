@@ -1,0 +1,35 @@
+{
+  "total": 3,
+  "items": [
+    {
+      "id": 6001,
+      "title": "Used GPU, 8 GB, works fine",
+      "body": "Selling a used graphics card with 8 GB of memory. Pickup only.",
+      "price": 175,
+      "author_id": "seller-1",
+      "author_name": "Seller A",
+      "posted_at": 1790000000000,
+      "images": ["https://img.example.test/6001-a.jpg"]
+    },
+    {
+      "id": 6002,
+      "title": "Compact NAS enclosure, 4 bays",
+      "body": "Four-bay NAS enclosure with original box. No drives included.",
+      "price": 799,
+      "author_id": "seller-2",
+      "author_name": "Seller B",
+      "posted_at": 1790000600000,
+      "images": []
+    },
+    {
+      "id": 6003,
+      "title": "Mechanical keyboard, hot-swap",
+      "body": "Hot-swappable keyboard with spare switches included.",
+      "price": 120,
+      "author_id": "seller-3",
+      "author_name": "Seller C",
+      "posted_at": 1790001200000,
+      "images": ["https://img.example.test/6003-a.jpg"]
+    }
+  ]
+}

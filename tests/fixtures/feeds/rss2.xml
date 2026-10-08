@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Example Gadget Blog</title>
+    <link>https://blog.example.com/</link>
+    <description>Fictional gadget news</description>
+    <item>
+      <title>Quartz &amp; Co. unveils the Zephyr 9</title>
+      <link>https://blog.example.com/posts/zephyr-9</link>
+      <guid isPermaLink="false">example-post-1001</guid>
+      <pubDate>Mon, 05 Oct 2026 08:30:00 GMT</pubDate>
+      <dc:creator>Mina Okafor</dc:creator>
+      <description><![CDATA[<p>A <b>fanless</b> laptop with a 14&quot; panel.</p><p>Ships in November.</p>]]></description>
+      <enclosure url="https://blog.example.com/img/zephyr.jpg" length="1234" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Firmware 2.1 for the Orbit router</title>
+      <link>https://blog.example.com/posts/orbit-firmware</link>
+      <guid>https://blog.example.com/posts/orbit-firmware</guid>
+      <pubDate>Sun, 04 Oct 2026 19:00:00 +0200</pubDate>
+      <author>editor@example.com (Ravi Sen)</author>
+      <description>Fixes a Wi-Fi roaming bug.&lt;br/&gt;See notes.</description>
+      <media:thumbnail url="https://blog.example.com/img/orbit.png"/>
+    </item>
+    <item>
+      <title>No date, no guid</title>
+      <link>https://blog.example.com/posts/undated</link>
+      <pubDate>not a date</pubDate>
+      <description>Plain text only.</description>
+    </item>
+    <item>
+    </item>
+  </channel>
+</rss>

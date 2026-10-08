@@ -1,0 +1,25 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Example Notes",
+  "home_page_url": "https://notes.example.com/",
+  "feed_url": "https://notes.example.com/feed.json",
+  "items": [
+    {
+      "id": "note-31",
+      "url": "https://notes.example.com/31",
+      "title": "Shelf build log",
+      "content_html": "<p>Cut the boards &amp; sanded them.</p><ul><li>Oak</li></ul>",
+      "image": "https://notes.example.com/img/31.jpg",
+      "date_published": "2026-10-03T07:15:00Z",
+      "authors": [{ "name": "Tuan Vo" }]
+    },
+    {
+      "id": 32,
+      "url": "https://notes.example.com/32",
+      "content_text": "Short note without a title.",
+      "date_published": "2026-10-04T10:00:00-05:00",
+      "attachments": [{ "url": "https://notes.example.com/a/32.mp3", "mime_type": "audio/mpeg" }]
+    },
+    "not an object"
+  ]
+}

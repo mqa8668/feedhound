@@ -1,0 +1,147 @@
+# Seed taxonomy for the Category table. 3 levels, >= 30 categories total.
+# Each top-level entry is level 1; "children" are level 2; nested "children" are level 3.
+
+- slug: electronics
+  name: Electronics
+  children:
+    - slug: phones
+      name: Phones
+      priceBounds: {min: 500000, max: 80000000}
+      children:
+        - slug: iphone
+          name: iPhone
+          attributes:
+            - {"key": "storage_gb", "label": "Storage", "kind": "number", "unit": "gb", "min": 64, "max": 2048, "keyAttr": true}
+            - {"key": "battery_pct", "label": "Battery health", "kind": "number", "unit": "pct", "min": 1, "max": 100, "keyAttr": false}
+            - {"key": "market", "label": "Market", "kind": "enum", "keyAttr": false, "values": ["vn", "ll", "zd", "za", "j", "ch", "kh"]}
+        - slug: samsung
+          name: Samsung
+        - slug: xiaomi
+          name: Xiaomi
+        - slug: oppo
+          name: OPPO
+    - slug: laptops
+      name: Laptops
+      priceBounds: {min: 2000000, max: 150000000}
+      children:
+        - slug: macbook
+          name: MacBook
+          attributes:
+            - {"key": "line", "label": "Line", "kind": "enum", "keyAttr": false, "values": ["air", "pro", "mini", "imac", "studio"]}
+            - {"key": "chip", "label": "Chip", "kind": "ordered", "keyAttr": true, "values": ["m1", "m1_pro", "m1_max", "m1_ultra", "m2", "m2_pro", "m2_max", "m2_ultra", "m3", "m3_pro", "m3_max", "m3_ultra", "m4", "m4_pro", "m4_max", "m5", "m5_pro", "m5_max"]}
+            - {"key": "ram_gb", "label": "RAM", "kind": "number", "unit": "gb", "min": 4, "max": 256, "keyAttr": true}
+            - {"key": "ssd_gb", "label": "SSD", "kind": "number", "unit": "gb", "min": 128, "max": 8192, "keyAttr": true}
+            - {"key": "screen_in", "label": "Screen", "kind": "number", "unit": "in", "min": 11, "max": 32, "keyAttr": false}
+            - {"key": "battery_pct", "label": "Battery health", "kind": "number", "unit": "pct", "min": 1, "max": 100, "keyAttr": false}
+            - {"key": "warranty_months", "label": "Warranty", "kind": "number", "unit": "months", "min": 0, "max": 36, "keyAttr": false}
+        - slug: windows-laptop
+          name: Windows Laptop
+        - slug: gaming-laptop
+          name: Gaming Laptop
+    - slug: tablets
+      name: Tablets
+      children:
+        - slug: ipad
+          name: iPad
+        - slug: android-tablet
+          name: Android Tablet
+    - slug: audio
+      name: Audio
+      children:
+        - slug: earbuds
+          name: Earbuds
+        - slug: headphones
+          name: Headphones
+        - slug: speakers
+          name: Speakers
+    - slug: wearables
+      name: Wearables
+      children:
+        - slug: smartwatch
+          name: Smartwatch
+        - slug: fitness-band
+          name: Fitness Band
+
+- slug: vehicles
+  name: Vehicles
+  children:
+    - slug: motorbikes
+      name: Motorbikes
+      children:
+        - slug: honda
+          name: Honda
+        - slug: yamaha
+          name: Yamaha
+        - slug: vinfast-ev
+          name: VinFast EV
+    - slug: cars
+      name: Cars
+      priceBounds: {min: 30000000, max: 5000000000}
+      attributes:
+        - {"key": "make", "label": "Make", "kind": "enum", "keyAttr": true, "values": ["toyota", "honda", "hyundai", "kia", "mazda", "mitsubishi", "ford", "vinfast", "chevrolet", "suzuki", "nissan", "mercedes_benz", "bmw", "lexus", "isuzu", "peugeot", "daewoo", "other"], "aliases": [{"value": "hyundai", "match": ["hyundai", "huyndai", "hundai"]}, {"value": "mitsubishi", "match": ["mitsubishi", "mitsu"]}, {"value": "chevrolet", "match": ["chevrolet", "chevy"]}, {"value": "mercedes_benz", "label": "Mercedes-Benz", "match": ["mercedes benz", "mercedes", "mer", "benz"]}, {"value": "bmw", "label": "BMW", "match": ["bmw"]}, {"value": "vinfast", "label": "VinFast", "match": ["vinfast"]}]}
+        - {"key": "model", "label": "Model", "kind": "text", "maxLen": 40, "keyAttr": true, "aliases": [{"value": "vios", "match": ["vios"], "implies": {"make": "toyota", "body": "sedan"}}, {"value": "innova", "match": ["innova"], "implies": {"make": "toyota", "body": "mpv"}}, {"value": "fortuner", "match": ["fortuner"], "implies": {"make": "toyota", "body": "suv"}}, {"value": "corolla_altis", "match": ["corolla altis", "altis", "corolla"], "implies": {"make": "toyota", "body": "sedan"}}, {"value": "camry", "match": ["camry"], "implies": {"make": "toyota", "body": "sedan"}}, {"value": "yaris", "match": ["yaris"], "implies": {"make": "toyota", "body": "hatchback"}}, {"value": "wigo", "match": ["wigo"], "implies": {"make": "toyota", "body": "hatchback"}}, {"value": "avanza", "match": ["avanza"], "implies": {"make": "toyota", "body": "mpv"}}, {"value": "veloz", "match": ["veloz"], "implies": {"make": "toyota", "body": "mpv"}}, {"value": "city", "match": ["city"], "implies": {"make": "honda", "body": "sedan"}}, {"value": "civic", "match": ["civic"], "implies": {"make": "honda", "body": "sedan"}}, {"value": "cr_v", "label": "CR-V", "match": ["cr v", "crv", "cr-v"], "implies": {"make": "honda", "body": "suv"}}, {"value": "hr_v", "label": "HR-V", "match": ["hr v", "hrv", "hr-v"], "implies": {"make": "honda", "body": "suv"}}, {"value": "jazz", "match": ["jazz"], "implies": {"make": "honda", "body": "hatchback"}}, {"value": "accent", "match": ["accent"], "implies": {"make": "hyundai", "body": "sedan"}}, {"value": "grand_i10", "label": "Grand i10", "match": ["grand i10", "i10"], "implies": {"make": "hyundai", "body": "hatchback"}}, {"value": "elantra", "match": ["elantra"], "implies": {"make": "hyundai", "body": "sedan"}}, {"value": "santa_fe", "match": ["santa fe", "santafe"], "implies": {"make": "hyundai", "body": "suv"}}, {"value": "tucson", "match": ["tucson"], "implies": {"make": "hyundai", "body": "suv"}}, {"value": "creta", "match": ["creta"], "implies": {"make": "hyundai", "body": "suv"}}, {"value": "kona", "match": ["kona"], "implies": {"make": "hyundai", "body": "suv"}}, {"value": "morning", "match": ["morning"], "implies": {"make": "kia", "body": "hatchback"}}, {"value": "k3", "match": ["k3", "cerato"], "implies": {"make": "kia", "body": "sedan"}}, {"value": "soluto", "match": ["soluto"], "implies": {"make": "kia", "body": "sedan"}}, {"value": "seltos", "match": ["seltos"], "implies": {"make": "kia", "body": "suv"}}, {"value": "sorento", "match": ["sorento"], "implies": {"make": "kia", "body": "suv"}}, {"value": "carnival", "match": ["carnival"], "implies": {"make": "kia", "body": "mpv"}}, {"value": "rio", "match": ["rio"], "implies": {"make": "kia", "body": "sedan"}}, {"value": "mazda_2", "match": ["mazda 2", "mazda2"], "implies": {"make": "mazda", "body": "sedan"}}, {"value": "mazda_3", "match": ["mazda 3", "mazda3"], "implies": {"make": "mazda", "body": "sedan"}}, {"value": "mazda_6", "match": ["mazda 6", "mazda6"], "implies": {"make": "mazda", "body": "sedan"}}, {"value": "cx_5", "label": "CX-5", "match": ["cx 5", "cx5", "cx-5"], "implies": {"make": "mazda", "body": "suv"}}, {"value": "cx_8", "label": "CX-8", "match": ["cx 8", "cx8", "cx-8"], "implies": {"make": "mazda", "body": "suv"}}, {"value": "xpander", "match": ["xpander"], "implies": {"make": "mitsubishi", "body": "mpv"}}, {"value": "attrage", "match": ["attrage"], "implies": {"make": "mitsubishi", "body": "sedan"}}, {"value": "pajero_sport", "match": ["pajero sport", "pajero"], "implies": {"make": "mitsubishi", "body": "suv"}}, {"value": "triton", "match": ["triton"], "implies": {"make": "mitsubishi", "body": "pickup"}}, {"value": "ranger", "match": ["ranger"], "implies": {"make": "ford", "body": "pickup"}}, {"value": "everest", "match": ["everest"], "implies": {"make": "ford", "body": "suv"}}, {"value": "ecosport", "label": "EcoSport", "match": ["ecosport"], "implies": {"make": "ford", "body": "suv"}}, {"value": "fiesta", "match": ["fiesta"], "implies": {"make": "ford", "body": "hatchback"}}, {"value": "focus", "match": ["focus"], "implies": {"make": "ford", "body": "hatchback"}}, {"value": "transit", "match": ["transit"], "implies": {"make": "ford", "body": "van"}}, {"value": "fadil", "match": ["fadil"], "implies": {"make": "vinfast", "body": "hatchback"}}, {"value": "vf_e34", "label": "VF e34", "match": ["vf e34", "vfe34"], "implies": {"make": "vinfast", "body": "suv"}}, {"value": "vf_5", "label": "VF 5", "match": ["vf 5", "vf5"], "implies": {"make": "vinfast", "body": "suv"}}, {"value": "spark", "match": ["spark"], "implies": {"make": "chevrolet", "body": "hatchback"}}, {"value": "cruze", "match": ["cruze"], "implies": {"make": "chevrolet", "body": "sedan"}}, {"value": "aveo", "match": ["aveo"], "implies": {"make": "chevrolet", "body": "sedan"}}, {"value": "captiva", "match": ["captiva"], "implies": {"make": "chevrolet", "body": "suv"}}, {"value": "swift", "match": ["swift"], "implies": {"make": "suzuki", "body": "hatchback"}}, {"value": "ertiga", "match": ["ertiga"], "implies": {"make": "suzuki", "body": "mpv"}}, {"value": "xl7", "label": "XL7", "match": ["xl7"], "implies": {"make": "suzuki", "body": "suv"}}, {"value": "carry", "match": ["carry"], "implies": {"make": "suzuki", "body": "truck"}}, {"value": "sunny", "match": ["sunny"], "implies": {"make": "nissan", "body": "sedan"}}, {"value": "navara", "match": ["navara"], "implies": {"make": "nissan", "body": "pickup"}}, {"value": "x_trail", "label": "X-Trail", "match": ["x trail", "xtrail", "x-trail"], "implies": {"make": "nissan", "body": "suv"}}, {"value": "matiz", "match": ["matiz"], "implies": {"make": "daewoo", "body": "hatchback"}}, {"value": "lacetti", "match": ["lacetti"], "implies": {"make": "daewoo", "body": "sedan"}}, {"value": "gentra", "match": ["gentra"], "implies": {"make": "daewoo", "body": "sedan"}}]}
+        - {"key": "year", "label": "Year", "kind": "number", "unit": "year", "min": 1990, "max": 2100, "keyAttr": true, "tolerance": 1}
+        - {"key": "odo_km", "label": "Odometer", "kind": "number", "unit": "km", "min": 0, "max": 999999, "keyAttr": false}
+        - {"key": "seats", "label": "Seats", "kind": "number", "unit": "count", "min": 2, "max": 16, "keyAttr": false}
+        - {"key": "transmission", "label": "Transmission", "kind": "enum", "keyAttr": true, "keyOptional": true, "values": ["at", "mt"], "aliases": [{"value": "at", "label": "AT", "match": ["so tu dong", "tu dong", "at"]}, {"value": "mt", "label": "MT", "match": ["so san", "so tay", "mt"]}]}
+        - {"key": "fuel", "label": "Fuel", "kind": "enum", "keyAttr": false, "values": ["gas", "diesel", "hybrid", "ev"], "aliases": [{"value": "gas", "match": ["xang", "may xang"]}, {"value": "diesel", "match": ["may dau", "chay dau", "diesel"]}, {"value": "hybrid", "match": ["hybrid", "hev"]}, {"value": "ev", "match": ["xe dien", "o to dien", "oto dien", "ev"]}]}
+        - {"key": "body", "label": "Body", "kind": "enum", "keyAttr": false, "values": ["sedan", "suv", "hatchback", "mpv", "pickup", "truck", "van"], "aliases": [{"value": "sedan", "match": ["sedan"]}, {"value": "suv", "match": ["suv"]}, {"value": "hatchback", "match": ["hatchback"]}, {"value": "mpv", "match": ["mpv"]}, {"value": "pickup", "match": ["pickup", "pick up", "ban tai"]}, {"value": "truck", "match": ["xe tai"]}, {"value": "van", "match": ["xe van", "minivan"]}]}
+        - {"key": "region", "label": "Region", "kind": "enum", "keyAttr": false, "values": ["ha_noi", "hai_phong", "quang_ninh", "hai_duong", "hung_yen", "thai_binh", "ha_nam", "nam_dinh", "ninh_binh", "vinh_phuc", "bac_ninh", "bac_giang", "phu_tho", "thai_nguyen", "tuyen_quang", "ha_giang", "cao_bang", "bac_kan", "lang_son", "lao_cai", "yen_bai", "son_la", "dien_bien", "lai_chau", "hoa_binh", "thanh_hoa", "nghe_an", "ha_tinh", "quang_binh", "quang_tri", "thua_thien_hue", "da_nang", "quang_nam", "quang_ngai", "binh_dinh", "phu_yen", "khanh_hoa", "ninh_thuan", "binh_thuan", "kon_tum", "gia_lai", "dak_lak", "dak_nong", "lam_dong", "binh_phuoc", "tay_ninh", "binh_duong", "dong_nai", "ba_ria_vung_tau", "hcm", "long_an", "tien_giang", "ben_tre", "tra_vinh", "vinh_long", "dong_thap", "an_giang", "kien_giang", "can_tho", "hau_giang", "soc_trang", "bac_lieu", "ca_mau", "other"], "aliases": [{"value": "hcm", "label": "TP.HCM", "match": ["hcm", "tphcm", "tp hcm", "ho chi minh", "sai gon", "saigon", "sg", "q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "quan 1", "quan 2", "quan 3", "quan 4", "quan 5", "quan 6", "quan 7", "quan 8", "quan 9", "quan 10", "quan 11", "quan 12", "thu duc", "go vap", "binh thanh", "tan binh", "tan phu", "phu nhuan", "binh tan", "binh chanh", "hoc mon", "cu chi", "nha be", "can gio"]}, {"value": "dong_nai", "match": ["dong nai", "bien hoa"]}, {"value": "ba_ria_vung_tau", "match": ["ba ria vung tau", "ba ria", "vung tau"]}, {"value": "binh_duong", "match": ["binh duong", "thu dau mot", "di an", "thuan an"]}, {"value": "ha_noi", "label": "Hà Nội", "match": ["ha noi", "hanoi", "hn"]}, {"value": "da_nang", "match": ["da nang", "danang"]}, {"value": "hai_phong", "match": ["hai phong", "haiphong"]}, {"value": "can_tho", "match": ["can tho", "cantho"]}, {"value": "thua_thien_hue", "match": ["thua thien hue", "hue"]}]}
+
+      children:
+        - slug: sedan
+          name: Sedan
+        - slug: suv
+          name: SUV
+    - slug: car-parts
+      name: Car parts & services
+    - slug: bicycles
+      name: Bicycles
+      children:
+        - slug: road-bike
+          name: Road Bike
+        - slug: mountain-bike
+          name: Mountain Bike
+
+- slug: home-appliances
+  name: Home Appliances
+  children:
+    - slug: kitchen
+      name: Kitchen
+      children:
+        - slug: refrigerator
+          name: Refrigerator
+        - slug: microwave
+          name: Microwave
+    - slug: cleaning
+      name: Cleaning
+      children:
+        - slug: washing-machine
+          name: Washing Machine
+        - slug: vacuum-cleaner
+          name: Vacuum Cleaner
+    - slug: climate
+      name: Climate
+      children:
+        - slug: air-conditioner
+          name: Air Conditioner
+        - slug: fan
+          name: Fan
+
+- slug: furniture
+  name: Furniture
+  children:
+    - slug: living-room
+      name: Living Room
+      children:
+        - slug: sofa
+          name: Sofa
+        - slug: coffee-table
+          name: Coffee Table
+    - slug: bedroom
+      name: Bedroom
+      children:
+        - slug: bed-frame
+          name: Bed Frame
+        - slug: wardrobe
+          name: Wardrobe

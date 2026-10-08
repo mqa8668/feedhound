@@ -1,0 +1,78 @@
+/*
+ * Design tokens. Source of truth for color, type,
+ * radius and spacing. Color tokens are HSL triplets so they compose with
+ * `hsl(var(--x) / <alpha>)` and with the legacy shadcn variables in index.css.
+ */
+:root {
+  --surface-0: 210 20% 98%;
+  --surface-1: 0 0% 100%;
+  --surface-2: 210 20% 95%;
+  --line: 214 32% 91%;
+  --line-strong: 214 20% 80%;
+  --text: 222 47% 11%;
+  --text-muted: 215 16% 44%;
+  --text-faint: 215 12% 58%;
+
+  --accent: 158 64% 32%;
+  --accent-fg: 0 0% 100%;
+  --good: 142 71% 34%;
+  --warn: 38 92% 42%;
+  --bad: 0 72% 46%;
+  --good-soft: 142 50% 92%;
+  --warn-soft: 38 90% 92%;
+  --bad-soft: 0 75% 94%;
+
+  --avatar-1: 152 40% 62%;
+  --avatar-2: 214 60% 70%;
+  --avatar-3: 36 65% 66%;
+  --avatar-4: 280 40% 72%;
+  --avatar-5: 350 55% 72%;
+  --avatar-6: 190 50% 60%;
+  --avatar-7: 70 45% 60%;
+  --avatar-8: 20 60% 68%;
+  --avatar-fg: 222 47% 8%;
+
+  --fs-sm: 12px;
+  --fs-md: 14px;
+  --fs-lg: 20px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-0: 222 47% 7%;
+    --surface-1: 222 39% 10%;
+    --surface-2: 217 33% 15%;
+    --line: 217 33% 20%;
+    --line-strong: 217 25% 30%;
+    --text: 210 40% 96%;
+    --text-muted: 215 20% 65%;
+    --text-faint: 215 14% 48%;
+
+    --accent: 158 55% 48%;
+    --accent-fg: 222 47% 8%;
+    --good: 142 65% 45%;
+    --warn: 38 92% 55%;
+    --bad: 0 70% 62%;
+    --good-soft: 142 40% 14%;
+    --warn-soft: 38 50% 14%;
+    --bad-soft: 0 40% 16%;
+
+    --avatar-1: 152 35% 35%;
+    --avatar-2: 214 45% 46%;
+    --avatar-3: 36 50% 38%;
+    --avatar-4: 280 30% 46%;
+    --avatar-5: 350 40% 46%;
+    --avatar-6: 190 45% 36%;
+    --avatar-7: 70 35% 33%;
+    --avatar-8: 20 45% 44%;
+    --avatar-fg: 0 0% 100%;
+  }
+}

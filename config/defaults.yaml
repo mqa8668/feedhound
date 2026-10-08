@@ -1,0 +1,132 @@
+# Seeds the Config table. Each top-level key becomes one Config row (key, value).
+app.tz: Asia/Ho_Chi_Minh
+
+llm.model.cheap: gpt-4o-mini
+llm.model.strong: gpt-4o
+llm.enrichAll: false
+llm.confidenceThreshold: 0.7
+llm.dailyTokenBudget: 2000000
+llm.budgetAlertPct: 80
+llm.timeoutMs: 30000
+llm.maxRetries: 2
+
+# 002 enrichment
+enrich.ruleConfidenceMin: 0.7
+enrich.llmConfidenceMin: 0.5
+enrich.aliasRefreshSec: 600
+
+schedule.activeHours: { start: "07:00", end: "23:00" }
+schedule.dailyCapPerSource: 12
+schedule.visitEverySec: { min: 900, max: 2700 }
+ingest.silenceAlertMultiplier: 3
+
+# 010 watchdog rewrite (ledger-based)
+watchdog.gapMultiplier: 1.5
+watchdog.gapGraceMin: 5
+
+match.minScore: 0.5
+match.maxWatches: 1000
+match.reloadDebounceMs: 200
+match.reloadIntervalSec: 60
+match.regexMaxLen: 200
+match.textMaxChars: 20000
+match.weakTermsPreset: "en"
+match.weakTerms: []
+
+notify.quietHoursStart: "22:00"
+notify.quietHoursEnd: "07:00"
+notify.retryMaxAttempts: 5
+
+# 004 notification
+notify.retry.delaysSec: [5, 30, 120, 600, 1800]
+notify.rateLimit.perChatPerSec: 1
+notify.rateLimit.perChatPerMin: 20
+notify.rateLimit.globalPerSec: 25
+notify.digest.defaultEveryMin: 10
+notify.digest.maxEntries: 20
+notify.excerptChars: 300
+# notify.ops.chatId intentionally not seeded (jsonb column is NOT NULL; a
+# missing key is read as "unset" by fetchOpsChatId -> ops rows are `skipped`,
+# same behaviour for an explicit null). Set via
+# ConfigService.setConfig once an ops chat exists.
+notify.ops.recipientEmail: ""
+notify.ops.failureRatePct: 10
+notify.ops.minSamples: 10
+bot.telegram.updateOffset: 0
+
+analytics.rollupIntervalMinutes: 60
+analytics.retentionDays.hour: 90
+analytics.retentionDays.trend: 7
+analytics.trend.minCount: 5
+analytics.trend.minZ: 3
+analytics.trend.minLift: 1.5
+analytics.trend.maxTermsPerPost: 5
+analytics.trend.overviewTop: 8
+analytics.trend.curate.enabled: true
+analytics.trend.curate.maxCandidates: 50
+analytics.trend.curate.dailyTokenCap: 30000
+
+media.thumbs.enabled: true
+media.thumbs.userAgent: "feedhound-thumbs/0.1 (+https://github.com/mqa8668/feedhound)"
+media.thumbs.batch: 20
+media.thumbs.backfillDays: 7
+media.thumbs.allowedHosts: []
+
+insights.backfillDays: 7
+insights.backfillMaxPerRun: 500
+insights.topicsMax: 20
+insights.spike.minVolume: 10
+insights.spike.ratioMin: 3
+insights.spike.zMin: 3
+insights.spike.baselineDays: 7
+insights.spike.evalHourLocal: 6
+insights.digest.hourLocal: 8
+insights.digest.topTopics: 5
+insights.digest.notableMax: 5
+insights.hourRetentionDays: 30
+insights.deliveryMaxAttempts: 3
+media.thumbs.maxBytes: 5242880
+media.thumbs.timeoutMs: 15000
+feed.priceBands: [300000000, 600000000, 1000000000]
+
+retention.postRevisionDays: 180
+retention.trendTermHistDays: 90
+
+# 016 ops baseline
+ops.shutdownTimeoutMs: 30000
+ops.dlqAlertIntervalSec: 3600
+
+web.enabled: false
+web.pollIntervalSec: 600
+web.maxSourcesPerRun: 5
+web.maxPagesPerRun: 3
+web.pageSize: 50
+web.minRequestGapMs: 5000
+web.alertMaxAgeMinutes: 120
+web.backoffBaseSec: 300
+web.backoffMaxSec: 21600
+web.userAgent: "feedhound/0.1 (+https://github.com/mqa8668/feedhound)"
+web.allowPrivateHosts: false
+
+# 027 watch builder v2
+watch.parseRatePerMin: 20
+watch.suggestExcludePreset: "en"
+watch.suggestExcludeSell: []
+
+# Corpus search
+search.candidateLimit: 20000
+search.pageLimitMax: 100
+search.exportMaxRows: 10000
+search.recencyWeight: 0.5
+search.recencyTauDays: 7
+search.trgmMinLen: 3
+
+# 036 source library classification.
+sources.classify.minPosts: 20
+sources.classify.windowDays: 30
+sources.classify.topicDepth: 2
+sources.classify.topicShareMin: 0.5
+sources.classify.regionMinPosts: 10
+sources.classify.regionShareMin: 0.6
+sources.classify.cron: "15 */6 * * *"
+

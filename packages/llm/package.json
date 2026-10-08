@@ -1,0 +1,25 @@
+{
+  "name": "@feedhound/llm",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts",
+    "./schema": "./src/schema.ts",
+    "./budget": "./src/budget.ts",
+    "./registry": "./src/registry.ts",
+    "./mock": "./src/mock.ts",
+    "./prompts/enrich.v1": "./src/prompts/enrich.v1.ts",
+    "./prompts/enrich.v2": "./src/prompts/enrich.v2.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@feedhound/db": "workspace:*",
+    "drizzle-orm": "^0.45.2",
+    "zod": "^4.6.5"
+  }
+}
