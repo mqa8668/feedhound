@@ -55,6 +55,9 @@ const server = Bun.serve<WsData>({
         const v = req.headers.get(k);
         if (v) headers[k] = v;
       }
+      // The api's same-origin check compares Origin with the public host, not the internal upstream host.
+      headers["x-forwarded-host"] = req.headers.get("host") ?? "";
+      headers["x-forwarded-proto"] = url.protocol.replace(":", "");
       const target = `${API_URL.replace(/^http/, "ws")}/ws${url.search}`;
       return srv.upgrade(req, { data: { target, headers, pending: [] } })
         ? (undefined as unknown as Response)
