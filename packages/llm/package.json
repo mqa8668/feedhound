@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@feedhound/db": "workspace:*",
-    "drizzle-orm": "^0.45.2",
+    "drizzle-orm": "^0.45.3",
     "zod": "^4.6.5"
   }
 }
