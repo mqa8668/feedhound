@@ -1,4 +1,4 @@
-FROM oven/bun:1.4.2 AS build
+FROM oven/bun:1.4.3 AS build
 WORKDIR /repo
 
 # Every workspace in package.json/bun.lock must be on disk for --frozen-lockfile,
@@ -14,7 +14,7 @@ WORKDIR /repo/apps/web
 RUN bun run build
 
 # Runtime: static dist + a small Bun server that also proxies /api and /ws to the api.
-FROM oven/bun:1.4.2 AS runtime
+FROM oven/bun:1.4.3 AS runtime
 ARG APP_VERSION=dev
 ENV APP_VERSION=$APP_VERSION \
     NODE_ENV=production \

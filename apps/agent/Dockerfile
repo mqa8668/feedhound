@@ -1,4 +1,4 @@
-FROM oven/bun:1.4.2 AS base
+FROM oven/bun:1.4.3 AS base
 WORKDIR /repo
 
 # Every workspace in package.json/bun.lock must be on disk for --frozen-lockfile,
